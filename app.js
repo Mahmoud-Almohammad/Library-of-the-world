@@ -1,30 +1,41 @@
-console.log('hello');
+var userNotification = confirm('Do you want to receive notification from our site?');
 
-confirm('Do you want to receive notification from our site?')
+var userTime = prompt('what is the time now?');
 
-var Usertime = prompt('what is the time now?')
+(theTime(userTime));
 
-if (Usertime >= 6 && Usertime <12)
-console.log('Good morning');
-else if (Usertime >=12 && Usertime <18)
-console.log('Good afternoon');
+function theTime (nowTime) {
+    if (nowTime >= 6 && nowTime <12) {
+        alert('Good morning');
+    }
+    else if (nowTime >=12 && nowTime < 18)
+     alert('Good afternoon');
 else
-console.log('Good evining');
+     alert('Good evining');
+
+     return nowTime;
+}
 
 var breakingbad = prompt('Say my name');
 
 while (breakingbad === '' || breakingbad === null || breakingbad !== 'heisenberg') {
     breakingbad = prompt('Say my name');
 }
+alert('you god damn right')
 
 var imageShown = prompt('how many books do you want to read from 1-5?')
 
-for (var i = 1; i <=  imageShown; i++) {
-    document.write('<img src="books.jpg">');
-}
+labraryImage(imageShown);
 
-for (i = 1;(Number(imageShown) > 5 || Number(imageShown) < 1); i++) {
-    imageShown = prompt('how many books do you want to read from 1-5?')
+function labraryImage (userSelection) {
+    for (var i = 1; i <=  userSelection; i++) {
+        document.write(i + '<img src="books.jpg">');
+    }
+
+    for (i = 1;(Number(userSelection) > 5 || Number(userSelection) < 1); i++) {
+        userSelection = prompt('how many books do you want to read from 1-5?');
+    }
+    return userNotification;
 }
 
 
